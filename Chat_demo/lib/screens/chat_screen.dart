@@ -34,6 +34,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void sendMessage(String text) {
     if (text.trim().isEmpty) return;
+    print('📤 Sending message: ${text.trim()}');
     final id = uuid.v4();
     final now = DateTime.now().toUtc().toIso8601String();
     final msg = MessageModel(
@@ -43,8 +44,10 @@ class _ChatScreenState extends State<ChatScreen> {
       timestamp: now,
       isSynced: false,
     );
+    print('💾 Saving to Hive: ${msg.toMap()}');
     HiveManager.saveMessage(msg.toMap());
     _ctrl.clear();
+    print('✅ Message saved to Hive');
 
     // Scroll to bottom after sending
     WidgetsBinding.instance.addPostFrameCallback((_) {
