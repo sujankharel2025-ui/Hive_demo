@@ -5,7 +5,7 @@ A Flutter mobile chat app with offline-first capabilities. Messages are saved lo
 ## 📱 Screenshots
 
 ![Chat Screen](screenshots/chatroom.png)
-![Sync Status](screenshots/sync_online.jpg)
+![Sync Status](screenshots/online_sync.jpg)
 ![Offline Mode](screenshots/offline.jpg)
 
 ## ✨ Key Features
